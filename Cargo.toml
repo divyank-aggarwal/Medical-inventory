@@ -1,0 +1,20 @@
+[package]
+name = "med_inventory_test"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+fltk = {version="^1.2",features = ["fltk-bundled"]}
+chrono = {version="0.4",features=["serde"]}
+serde = {version="1.0",features = ["derive"]}
+csv = "1.1.6"
+fltk-table = "0.2"
